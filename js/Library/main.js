@@ -5,14 +5,17 @@ const dialogElem = document.getElementById("Book");
 const confirmAddBookBtn=document.querySelector('#confirmBtn');
 const dialogInputs=document.getElementsByTagName('input');
 
-function Book(title, author, pages, read) {
-    this.title=title;
-    this.author=author;
-    this.pages=pages;
-    this.read=read;
-    this.info = function() {
-      return `by ${author}, it has ${pages} pages`;
+class Book {
+    constructor(title, author, pages, read) {
+      this.title=title;
+      this.author=author;
+      this.pages=pages;
+      this.read=read;
     }
+    
+      info () {
+        return `by ${this.author}, it has ${this.pages} pages`;
+      }
 }
 
 Book.prototype.deleteCard = function(index) {
@@ -54,6 +57,7 @@ Book.prototype.createCard = function(){
     card.setAttribute('class','card');
     cardTitle.setAttribute('class','title');
     cardTitle.textContent=this.title;
+    console.log(this.info());
     cardText.textContent=this.info();
     card.value=myLibrary.length;
 
