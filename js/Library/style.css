@@ -207,3 +207,7 @@ dialog[open] {
     left: 100%;
     font-size: 1rem;
   }
+
+  input:invalid {
+    border-color: red;
+  }

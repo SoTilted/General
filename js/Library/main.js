@@ -57,7 +57,6 @@ Book.prototype.createCard = function(){
     card.setAttribute('class','card');
     cardTitle.setAttribute('class','title');
     cardTitle.textContent=this.title;
-    console.log(this.info());
     cardText.textContent=this.info();
     card.value=myLibrary.length;
 
@@ -105,6 +104,16 @@ addBookBtn.addEventListener('click',()=>{dialogElem.showModal();})
 
 confirmBtn.addEventListener("click", (event) => {
   event.preventDefault(); // We don't want to submit this fake form
-  addBookToLibrary();
-  dialogElem.close();
+  let isValid=true;
+  [...dialogInputs].forEach(element => {
+    if (!element.reportValidity()){
+        isValid = false;
+
+        return;
+    }
+  });
+  if (isValid){
+    addBookToLibrary();
+    dialogElem.close();
+  }
   });
