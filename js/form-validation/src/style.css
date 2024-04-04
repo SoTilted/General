@@ -1,0 +1,82 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px;
+    background-color: whitesmoke;
+    border-radius: 8px;
+}
+
+
+form > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#cancel {
+    margin-bottom: 5px;
+}
+button {
+    padding: 8px;
+    width: 90%;
+}
+
+input {
+    font-size: 1.3rem;
+}
+span{
+    display: flex;
+}
+
+.condition {
+    color: red;
+    font-size: 30px;
+}
+
+input:invalid {
+    background-color: rgb(255, 202, 202);
+    border-color: red;
+}
+
+input:valid {
+    background-color: rgb(202, 255, 206);
+    border-color: green;
+}
+
+.error {
+    
+    width: 264px;
+    font-weight: 600;
+    font-size: 90%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+    box-sizing: border-box;
+  }
+
+#confirm:hover {
+    background-color: green ;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#cancel:hover {
+    background-color: red ;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+  }
